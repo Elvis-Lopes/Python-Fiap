@@ -18,7 +18,16 @@ for indice in range(0, len(equipamentos)):
           f'Departamento: {departamentos[indice]}')
 
 busca = input("Digite o nome do equipamento que deseja buscar: ")
-for indice in range(0, len(equipamentos)):
-    if busca == equipamentos[indice]:
-        print(f'Valor: {valores[indice]}\n'
-              f'Serial: {seriais[indice]}')
+decisao = int(input("1- Drepreciar \n"
+                    "2- apagar"))
+if decisao == 1:
+    for indice in range (0, len(equipamentos)):
+        if busca == equipamentos[indice]:
+            valores[indice] = valores[indice] - (valores[indice]*10)/100
+            print(f'Valor: {valores[indice]}\n'
+                  f'Serial: {seriais[indice]}')
+elif decisao == 2:
+    for indice in range(0, len(equipamentos)):
+        if busca == equipamentos[indice]:
+            del equipamentos[indice]
+print(equipamentos)
